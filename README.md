@@ -1,9 +1,6 @@
 # LeetCode
 Level up my coding skills and quickly land a job
 
-## License
-[MIT](https://github.com/Sunny-Kid/LeetCode/blob/master/LICENSE)
-
 ## Structure
 -  1.两数之和
 -  101.对称二叉树
@@ -51,4 +48,7 @@ Level up my coding skills and quickly land a job
 
 ## Issue and Question
 
-Please create an [Issue](https://github.com/Sunny-Kid/Algorithm/issues) or [Pull Request](https://github.com/Sunny-Kid/Algorithm/pulls) 
+Please create an [Issue](https://github.com/Sunny-Kid/Algorithm/issues) or [Pull Request](https://github.com/Sunny-Kid/Algorithm/pulls)
+
+## License
+[MIT](https://github.com/Sunny-Kid/LeetCode/blob/master/LICENSE)
