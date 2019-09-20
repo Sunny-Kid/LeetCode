@@ -1,5 +1,5 @@
 # LeetCode
-Level up my coding skills and quickly land a job
+Level up my coding skills and quickly land a job, happy coding!
 
 ## Structure
 -  1.两数之和
