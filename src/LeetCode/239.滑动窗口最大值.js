@@ -27,24 +27,28 @@
  * @param {number} k
  * @return {number[]}
  */
-var maxSlidingWindow1 = function(nums, k) {
-  if (!nums.length) return [];
-  const win = nums.splice(0, k);
+var maxSlidingWindow1 = function (nums, k) {
+  // bad 时间复杂度O(n * k)
+  if (nums.length === 0 || k === 0) return [];
+  let sliceWindows = [];
   const res = [];
-  res.push(Math.max(...win));
-  while (nums.length > 0) {
-    win.shift();
-    win.push(nums.shift());
-    res.push(Math.max(...win));
+  for (let i = 0; i < nums.length - k + 1; i++) {
+    for (let j = 0; j < k; j++) {
+      sliceWindows.push(nums[i + j]);
+    }
+    res.push(Math.max(...sliceWindows));
+    sliceWindows = [];
   }
   return res;
 };
 
-var maxSlidingWindow2 = function(nums, k) {
+var maxSlidingWindow2 = function (nums, k) {
+  // 双端队列优化时间复杂度, 时间复杂度O(n)
   if (!nums.length) return [];
   const win = [];
   const res = [];
   for (let i = 0; i < nums.length; i++) {
+    // 遍历到第 4 个元素的时候，i = 3，k = 3，i = 0的元素不需要了
     if (i >= k && win[0] <= i - k) {
       win.shift();
     }
@@ -52,6 +56,7 @@ var maxSlidingWindow2 = function(nums, k) {
       win.pop();
     }
     win.push(i);
+    // 滑动窗口大小为 3时，遍历到第 3 个元素的时候，即 i = 2，要开始计算 res
     if (i >= k - 1) {
       res.push(nums[win[0]]);
     }
