@@ -1,5 +1,6 @@
 {
   "extends": [
+    "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:import/recommended"
   ],
@@ -8,6 +9,11 @@
     "prettier",
     "import"
   ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
   "rules": {
     "max-len": [
       "error",
