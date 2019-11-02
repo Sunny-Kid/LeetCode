@@ -31,94 +31,87 @@ N 在[1,200]的范围内。
  * @param {number[][]} M
  * @return {number}
  */
-// 方法1：染色
-var findCircleNum = function(M) {
-  const visit = [];
+// 方法1：DFS
+var findCircleNum = function (M) {
+  const visited = [];
+  let count = 0;
   const n = M.length;
   for (let i = 0; i < n; i++) {
-    visit.push(false);
+    visited.push(false);
   }
 
-  let count = 0;
   for (let i = 0; i < n; i++) {
-    if (!visit[i]) {
-      dfs(i, visit, M);
+    if (!visited[i]) {
+      dfs(i, visited, M);
       count++;
     }
   }
   return count;
 };
 
-const dfs = function(i, visit, M) {
-  for (let j = 0; j < visit.length; j++) {
-    if (!visit[j] && M[i][j]) {
-      visit[j] = true;
-      dfs(j, visit, M);
+const dfs = function (i, visited, M) {
+  for (let j = 0; j < visited.length; j++) {
+    if (!visited[j] && M[i][j] === 1) {
+      visited[j] = true;
+      dfs(j, visited, M);
     }
   }
+};
+
+// 方法2：BFS
+var findCircleNum = function (M) {
+  const visited = [];
+  const queue = [];
+  let count = 0;
+  const n = M.length;
+  for (let i = 0; i < n; i++) {
+    visited.push(false);
+  }
+
+  for (let i = 0; i < n; i++) {
+    if (!visited[i]) {
+      queue.push(i);
+      while (queue.length) {
+        const s = queue.shift();
+        visited[s] = true;
+        for (let j = 0; j < n; j++) {
+          if (M[s][j] === 1 && !visited[j]) {
+            queue.push(j);
+          }
+        }
+      }
+      count++;
+    }
+  }
+  return count;
 };
 
 // 方法2：并查集
-class UnionFind {
-  constructor(grid) {
-    const m = grid.length;
-    const n = grid.length;
-    this.count = 0;
-    this.parent = new Array(m * n).fill(-1);
-    this.rank = new Array(m * n).fill(0);
-    for (let i = 0; i < m; i++) {
-      for (let j = 0; j < n; j++) {
-        if (grid[i][j] === 1) {
-          this.parent[i * n + j] = i * n + j;
-          this.count += 1;
-        }
+var findCircleNum = function (M) {
+  const parent = new Array(M.length).fill(-1);
+  for (let i = 0; i < M.length; i++) {
+    for (let j = 0; j < M.length; j++) {
+      if (M[i][j] === 1 && i !== j) {
+        union(parent, i, j);
       }
     }
   }
-
-  find(i) {
-    if (this.parent[i] != i) {
-      this.parent[i] = this.find(this.parent[i]);
-    }
-    return this.parent[i];
+  let count = 0;
+  for (let i = 0; i < parent.length; i++) {
+    if (parent[i] === -1) count++;
   }
+  return count;
+};
 
-  union(x, y) {
-    const rootx = this.find(x);
-    const rooty = this.find(y);
-    if (rootx !== rooty) {
-      if (this.rank[rootx] > this.rank[rooty]) {
-        this.parent[rooty] = rootx;
-      } else if (this.rank[rootx] < this.rank[rooty]) {
-        this.parent[rootx] = rooty;
-      } else {
-        this.parent[rooty] = rootx;
-        this.rank[rootx] += 1;
-      }
-      this.count -= 1;
-    }
+function findParent(parent, i) {
+  if (parent[i] === -1) {
+    return i;
   }
+  return findParent(parent, parent[i]);
 }
 
-var findCircleNum = function(grid) {
-  if (!grid || !grid[0]) return 0;
-  const uf = new UnionFind(grid);
-  const directions = [[0, 1], [0, -1], [-1, 0], [1, 0]];
-  const m = grid.length;
-  const n = grid[0].length;
-
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (grid[i][j] === 0) continue;
-      for (let d of directions) {
-        const nr = i + d[0];
-        const nc = j + d[1];
-        if (nr >= 0 && nc >= 0 && nr < m && nc < n && grid[nr][nc] === 1) {
-          uf.union(i * n + j, nr * n + nc);
-        }
-      }
-    }
-  }
-
-  return uf.count;
-};
+function union(parent, i, j) {
+  const iParent = findParent(parent, i);
+  const jParent = findParent(parent, j);
+  if (iParent !== jParent) parent[iParent] = jParent;
+}
