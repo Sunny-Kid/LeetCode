@@ -32,7 +32,7 @@ N 在[1,200]的范围内。
  * @return {number}
  */
 // 方法1：DFS
-var findCircleNum = function (M) {
+var findCircleNum = function(M) {
   const visited = [];
   let count = 0;
   const n = M.length;
@@ -49,8 +49,7 @@ var findCircleNum = function (M) {
   return count;
 };
 
-
-const dfs = function (i, visited, M) {
+const dfs = function(i, visited, M) {
   for (let j = 0; j < visited.length; j++) {
     if (!visited[j] && M[i][j] === 1) {
       visited[j] = true;
@@ -60,7 +59,7 @@ const dfs = function (i, visited, M) {
 };
 
 // 方法2：BFS
-var findCircleNum = function (M) {
+var findCircleNum = function(M) {
   const visited = [];
   const queue = [];
   let count = 0;
@@ -88,7 +87,7 @@ var findCircleNum = function (M) {
 };
 
 // 方法2：并查集
-var findCircleNum = function (M) {
+var findCircleNum = function(M) {
   const parent = new Array(M.length).fill(-1);
   for (let i = 0; i < M.length; i++) {
     for (let j = 0; j < M.length; j++) {
