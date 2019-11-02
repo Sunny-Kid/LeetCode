@@ -46,9 +46,5 @@ var isBalanced = function(root) {
   function maxDepth(root) {
     return root === null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
   }
-  return (
-    Math.abs(maxDepth(root.left) - maxDepth(root.right)) < 2 &&
-    isBalanced(root.left) &&
-    isBalanced(root.right)
-  );
+  return Math.abs(maxDepth(root.left) - maxDepth(root.right)) < 2 && isBalanced(root.left) && isBalanced(root.right);
 };
