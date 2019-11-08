@@ -15,6 +15,20 @@
  * @param {number[]} nums
  * @return {number}
  */
+// 前缀和
+var maxSubArray = function(nums) {
+  let max = -Number.MAX_VALUE;
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum = 0;
+    for (let j = i; j < nums.length; j++) {
+      sum += nums[j];
+      max = Math.max(sum, max);
+    }
+  }
+  return max;
+};
+
 // 动态规划
 var maxSubArray = function(nums) {
   const length = nums.length;
