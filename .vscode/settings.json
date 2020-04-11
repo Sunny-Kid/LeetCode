@@ -1,7 +1,6 @@
 {
   "typescript.validate.enable": true,
   "javascript.validate.enable": false,
-  "editor.formatOnSave": true,
   "tslint.enable": true,
   "npm.updateStrategy": "SEMVER",
   "html.format.enable": false,
