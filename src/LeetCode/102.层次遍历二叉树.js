@@ -39,6 +39,24 @@ const levelOrder1 = root => {
   return res;
 };
 
+const levelOrder = root => {
+  if (!root) return [];
+  const queue = [];
+  const result = [];
+  queue.push({ level: 0, node: root });
+  while (queue.length) {
+    for (let i = 0; i < queue.length; i++) {
+      const currNode = queue.shift();
+      const { level, node } = currNode;
+      result[level] = result[level] || [];
+      result[level].push(node.value);
+      if (node.left) queue.push({ level: level + 1, node: node.left });
+      if (node.right) queue.push({ level: level + 1, node: node.right });
+    }
+  }
+  return result;
+};
+
 // DFS实现
 const levelOrder2 = root => {
   if (!root) return [];

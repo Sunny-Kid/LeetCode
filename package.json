@@ -22,6 +22,14 @@
       "@commitlint/config-conventional"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
+  },
   "lint-staged": {
     "src/**/*.js": [
       "yarn prettier",

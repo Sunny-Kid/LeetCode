@@ -33,7 +33,7 @@ var findKthLargest = function(nums, k) {
     if (minHeap.size() < k) {
       minHeap.push(nums[i]);
     } else if (minHeap.top() < nums[i]) {
-      minHeap.top();
+      minHeap.pop();
       minHeap.push(nums[i]);
     }
   }
