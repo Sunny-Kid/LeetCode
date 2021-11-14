@@ -49,8 +49,11 @@ var minDistance = function(word1, word2) {
   for (let i = 1; i < m + 1; i++) {
     for (let j = 1; j < n + 1; j++) {
       dp[i][j] = Math.min(
+        // word 1 与 word 2 的字符进行替换
         dp[i - 1][j - 1] + (word1[i - 1] === word2[j - 1] ? 0 : 1),
+        // 字符串 word1末尾插入一个与 word2[j] 相等的字符
         dp[i - 1][j] + 1,
+        // 把字符 word1[i] 删除
         dp[i][j - 1] + 1,
       );
     }

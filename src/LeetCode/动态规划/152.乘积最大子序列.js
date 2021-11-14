@@ -23,12 +23,12 @@ var maxProduct = function(nums) {
   let curMin = nums[0];
   let curMax = nums[0];
   for (let i = 1; i < nums.length; i++) {
-    let num = nums[i];
-    curMin_tmp = curMin * num;
-    curMax_tmp = curMax * num;
-    curMin = Math.min(curMin_tmp, curMax_tmp, num);
-    curMax = Math.max(curMax_tmp, curMin_tmp, num);
-    res = curMax > res ? curMax : res;
+    const num = nums[i];
+    const curMaxTmp = curMax * num;
+    const curMinTmp = curMin * num;
+    curMax = Math.max(curMaxTmp, curMinTmp, num);
+    curMin = Math.min(curMaxTmp, curMinTmp, num);
+    res = Math.max(res, curMax);
   }
   return res;
 };

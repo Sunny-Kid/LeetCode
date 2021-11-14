@@ -27,6 +27,5 @@ function knapsack(weights, values, capacity) {
       }
     }
   }
-  console.log(123);
   return dp[weights.length - 1][capacity];
 }

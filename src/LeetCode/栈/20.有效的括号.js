@@ -42,9 +42,9 @@ var isValid = function(s) {
   };
 
   for (let str of s) {
-    if (!Object.keys(map).includes(str)) {
+    if (Object.values(map).includes(str)) {
       stack.push(str);
-    } else if (!stack || map[str] !== stack.pop()) {
+    } else if (map[str] !== stack.pop()) {
       return false;
     }
   }

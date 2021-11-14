@@ -37,12 +37,15 @@ var threeSum2 = function(nums) {
   const hashMap = {};
   for (let i = 0; i < nums.length - 2; i++) {
     for (let j = i + 1; j < nums.length - 1; j++) {
-      if (hashMap[nums[j]] !== undefined) {
-        res.push([nums[j]].concat(hashMap[nums[j]]));
-        hashMap[nums[j]] = undefined;
+      if (hashMap[nums[j]] && hashMap[nums[j]].value !== undefined && hashMap[nums[j]].count === 1) {
+        res.push([nums[j]].concat(hashMap[nums[j]].value));
+        hashMap[nums[j]].count++;
       } else {
         const difference = 0 - nums[i] - nums[j];
-        hashMap[difference] = [nums[i], nums[j]];
+        hashMap[difference] = {
+          count: 1,
+          value: [nums[i], nums[j]],
+        };
       }
     }
   }
@@ -75,6 +78,40 @@ var threeSum3 = function(nums) {
         }
       } while (first < last);
       while (nums[i] === nums[++i]) {}
+    }
+  }
+  return res;
+};
+
+var threeSum3 = function(nums) {
+  let res = [];
+  let length = nums.length;
+  if (length < 3) {
+    return res;
+  }
+  nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (nums[i] > 0) break;
+    if (i > 0 && nums[i - 1] === nums[i]) continue;
+    let left = i + 1;
+    let right = nums.length - 1;
+    const difference = -nums[i];
+    while (left < right) {
+      if (nums[left] + nums[right] === difference) {
+        res.push([nums[i], nums[left], nums[right]]);
+        while (left < right && nums[left] === nums[left + 1]) {
+          left++;
+        }
+        while (left < right && nums[right] === nums[right - 1]) {
+          right--;
+        }
+        left++;
+        right--;
+      } else if (nums[left] + nums[right] < difference) {
+        left++;
+      } else {
+        right--;
+      }
     }
   }
   return res;
