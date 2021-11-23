@@ -23,23 +23,24 @@ n == height.length
 
 var trap = function(height) {
   const n = height.length;
-  if (n === 0) { return 0; }
+  if (n === 0) {
+    return 0;
+  }
 
   const leftArr = new Array(n).fill(0);
-  leftArr[0] = height[0]
-  for (let i = 1;i < n;i++) {
+  leftArr[0] = height[0];
+  for (let i = 1; i < n; i++) {
     leftArr[i] = Math.max(leftArr[i - 1], height[i]);
   }
   const rightArr = new Array(n).fill(0);
-  rightArr[n - 1] = height[n - 1]
-  for (let i = n - 2;i >=0;i--) {
+  rightArr[n - 1] = height[n - 1];
+  for (let i = n - 2; i >= 0; i--) {
     rightArr[i] = Math.max(rightArr[i + 1], height[i]);
   }
   let ans = 0;
-  for (let i = 0;i < n;i++) {
-    ans += Math.min(leftArr[i], rightArr[i]) - height[i]
+  for (let i = 0; i < n; i++) {
+    ans += Math.min(leftArr[i], rightArr[i]) - height[i];
   }
 
   return ans;
 };
-

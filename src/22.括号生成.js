@@ -33,3 +33,5 @@ function generateOneByOne(sublist, res, left, right) {
     generateOneByOne(sublist + ')', res, left, right - 1);
   }
 }
+
+console.log(generateParenthesis(3));
