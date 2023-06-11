@@ -11,7 +11,7 @@
  * @param {number} n
  * @return {number}
  */
-var uniquePaths = function(m, n) {
+var uniquePaths = function (m, n) {
   if (m <= 0 || n <= 0) {
     return 0;
   }
