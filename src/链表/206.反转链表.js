@@ -21,7 +21,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+var reverseList = function (head) {
   let prev = null;
   let curr = head;
   while (curr) {
@@ -33,7 +33,7 @@ var reverseList = function(head) {
   return prev;
 };
 
-var reverseList = function(head) {
+var reverseList = function (head) {
   if (head === null || head.next === null) return head;
   const node = reverseList(head.next);
   head.next.next = head;

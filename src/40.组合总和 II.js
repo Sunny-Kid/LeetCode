@@ -51,3 +51,32 @@ function backtrack(list, tempList, nums, remain, start) {
     tempList.pop();
   }
 }
+
+var combinationSum2 = function (candidates, target) {
+  let res = [];
+  let path = [];
+  let total = 0;
+  const len = candidates.length;
+  candidates.sort((a, b) => a - b);
+  let used = new Array(len).fill(false);
+  const backtracking = (startIndex) => {
+    if (total === target) {
+      res.push([...path]);
+      return;
+    }
+    for (let i = startIndex; i < len && total < target; i++) {
+      const cur = candidates[i];
+      if (cur > target - total || (i > 0 && cur === candidates[i - 1] && !used[i - 1])) continue;
+      path.push(cur);
+      total += cur;
+      used[i] = true;
+      // 进入下一层递归，去下一个数
+      backtracking(i + 1);
+      path.pop();
+      total -= cur;
+      used[i] = false;
+    }
+  }
+  backtracking(0);
+  return res;
+};

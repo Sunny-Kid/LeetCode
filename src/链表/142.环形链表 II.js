@@ -14,15 +14,21 @@
 解释：链表中有一个环，其尾部连接到第二个节点。
  */
 
-var detectCycle = function(head) {
+var detectCycle = function (head) {
   let slow = head;
   let fast = head;
-  while (fast !== null && fast.next !== null) {
+  while (true) {
+    if (fast === null || fast.next === null) return null;
     slow = slow.next;
     fast = fast.next.next;
     if (slow === fast) {
-      return slow;
+      break;
     }
   }
-  return null;
+  fast = head;
+  while (fast !== slow) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+  return fast;
 };
