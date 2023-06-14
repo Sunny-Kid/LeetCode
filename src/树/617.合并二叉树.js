@@ -6,7 +6,7 @@
 示例 1:
 
 输入: 
-	Tree 1                     Tree 2                  
+  Tree 1                     Tree 2                  
           1                         2                             
          / \                       / \                            
         3   2                     1   3                        
@@ -14,11 +14,11 @@
       5                             4   7                  
 输出: 
 合并后的树:
-	     3
-	    / \
-	   4   5
-	  / \   \ 
-	 5   4   7
+       3
+      / \
+     4   5
+    / \   \ 
+   5   4   7
 注意: 合并必须从两个树的根节点开始。
  */
 
@@ -34,7 +34,7 @@
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-var mergeTrees = function(t1, t2) {
+var mergeTrees = function (t1, t2) {
   if (t1 === null) return t2;
   if (t2 === null) return t1;
   let res = new TreeNode(t1.val + t2.val);

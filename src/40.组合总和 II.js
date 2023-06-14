@@ -22,8 +22,8 @@ candidates 中的每个数字在每个组合中只能使用一次。
 输入: candidates = [2,5,2,1,2], target = 5,
 所求解集为:
 [
-  [1,2,2],
-  [5]
+  [1,2,2],
+  [5]
 ]
  */
 
@@ -32,7 +32,7 @@ candidates 中的每个数字在每个组合中只能使用一次。
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function(candidates, target) {
+var combinationSum2 = function (candidates, target) {
   const list = [];
   // 还是先排序，主要是方便去重
   backtrack(list, [], candidates.sort((a, b) => a - b), target, 0);

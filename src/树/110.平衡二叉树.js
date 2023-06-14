@@ -41,7 +41,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isBalanced = function(root) {
+var isBalanced = function (root) {
   if (!root) return true;
   function maxDepth(root) {
     return root === null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;

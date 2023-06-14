@@ -28,7 +28,7 @@
  * @param {number} sum
  * @return {boolean}
  */
-var hasPathSum1 = function(root, sum) {
+var hasPathSum1 = function (root, sum) {
   if (!root) return null;
   sum -= root.val;
   if (!root.left && !root.right) {
@@ -37,7 +37,7 @@ var hasPathSum1 = function(root, sum) {
   return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
 };
 
-var hasPathSum2 = function(root, sum) {
+var hasPathSum2 = function (root, sum) {
   if (!root) return false;
   const nodeStack = [];
   const sumStack = [];
@@ -64,7 +64,7 @@ var hasPathSum2 = function(root, sum) {
   return false;
 };
 
-var pathSum = function(root, sum) {
+var pathSum = function (root, sum) {
   if (!root) return [];
   let res = [];
   function dfs(result, ressum, node) {

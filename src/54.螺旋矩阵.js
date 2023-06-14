@@ -8,7 +8,7 @@
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var spiralOrder = function(matrix) {
+var spiralOrder = function (matrix) {
   if (!matrix.length || !matrix[0].length) {
     return [];
   }
@@ -22,17 +22,17 @@ var spiralOrder = function(matrix) {
   let bottom = row - 1;
 
   while (left <= right && top <= bottom) {
-    for (let column = left;column <= right;column++) {
+    for (let column = left; column <= right; column++) {
       result.push(matrix[top][column]);
     }
-    for (let row = top + 1;row <= bottom;row++) {
+    for (let row = top + 1; row <= bottom; row++) {
       result.push(matrix[row][right]);
     }
     if (left < right && top < bottom) {
-      for (let column = right - 1;column > left;column--) {
+      for (let column = right - 1; column > left; column--) {
         result.push(matrix[bottom][column]);
       }
-      for (let row = bottom;row > top;row--) {
+      for (let row = bottom; row > top; row--) {
         result.push(matrix[row][left]);
       }
     }

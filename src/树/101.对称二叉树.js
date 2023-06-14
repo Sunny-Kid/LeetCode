@@ -31,7 +31,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isSymmetric = function(root) {
+var isSymmetric = function (root) {
   return isMirror(root, root);
 };
 
@@ -41,7 +41,7 @@ function isMirror(t1, t2) {
   return t1.val === t2.val && isMirror(t1.right, t2.left) && isMirror(t1.left, t2.right);
 }
 
-var isSymmetric = function(root) {
+var isSymmetric = function (root) {
   const queue = [];
   queue.push(root);
   queue.push(root);
