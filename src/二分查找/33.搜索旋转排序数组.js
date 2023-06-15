@@ -10,17 +10,12 @@
 你的算法时间复杂度必须是 O(log n) 级别。
 
 示例 1:
-
 输入: nums = [4,5,6,7,0,1,2], target = 0
 输出: 4
-示例 2:
 
+示例 2:
 输入: nums = [4,5,6,7,0,1,2], target = 3
 输出: -1
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
 /**
@@ -28,11 +23,19 @@
  * @param {number} target
  * @return {number}
  */
-var search = function(nums, target) {
+var search = function (nums, target) {
+  const numsLength = nums.length;
+  if (numsLength === 0) {
+    return -1;
+  }
+  if (numsLength === 1) {
+    return nums[0] === target ? 0 : -1;
+  }
+
   let left = 0;
-  let right = nums.length;
+  let right = numsLength - 1;
   while (left <= right) {
-    const mid = Math.floor(left + (right - left) / 2);
+    const mid = Math.floor((left + right) / 2);
     if (nums[mid] === target) return mid;
     if (nums[mid] < nums[right]) {
       if (nums[mid] < target && target <= nums[right]) {

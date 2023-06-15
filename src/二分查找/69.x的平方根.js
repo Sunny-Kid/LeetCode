@@ -14,14 +14,14 @@
 输入: 8
 输出: 2
 说明: 8 的平方根是 2.82842..., 
-     由于返回类型是整数，小数部分将被舍去。
+     由于返回类型是整数，小数部分将被舍去。
  */
 
 /**
  * @param {number} x
  * @return {number}
  */
-var mySqrt = function(x) {
+var mySqrt = function (x) {
   if (x === 0 || x === 1) return x;
   let left = 0;
   let right = x;
@@ -40,7 +40,7 @@ var mySqrt = function(x) {
   return res;
 };
 
-var mySqrt = function(x) {
+var mySqrt = function (x) {
   if (x === 0 || x === 1) return x;
   let r = x;
   while (r * r > x) {
