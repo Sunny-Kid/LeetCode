@@ -16,22 +16,19 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function(n) {
+var generateParenthesis = function (n) {
   const res = [];
-  generateOneByOne('', res, n, n);
+  const generateOneByOne = (sublist, left, right) => {
+    // 右括号可组合的数量已经少于左括号，那么这个时候应该要终止递归回到上一层继续先进行左括号的拼接
+    if (left > right) return;
+    if (left === 0 && right === 0) {
+      res.push(sublist);
+    }
+    if (left > 0) generateOneByOne(sublist + '(', left - 1, right);
+    if (right > 0) generateOneByOne(sublist + ')', left, right - 1);
+  }
+  generateOneByOne('', n, n);
   return res;
 };
-
-function generateOneByOne(sublist, res, left, right) {
-  if (left === 0 && right === 0) {
-    res.push(sublist);
-  }
-  if (left > 0) {
-    generateOneByOne(sublist + '(', res, left - 1, right);
-  }
-  if (right > left) {
-    generateOneByOne(sublist + ')', res, left, right - 1);
-  }
-}
 
 console.log(generateParenthesis(3));
