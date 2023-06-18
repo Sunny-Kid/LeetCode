@@ -30,14 +30,14 @@ candidates 中的每个数字在每个组合中只能使用一次。
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function (candidates, target) {
+var combinationSum2 = function(candidates, target) {
   let res = [];
   let path = [];
   let total = 0;
   const len = candidates.length;
   candidates.sort((a, b) => a - b);
   let used = new Array(len).fill(false);
-  const backtracking = (startIndex) => {
+  const backtracking = startIndex => {
     if (total === target) {
       res.push([...path]);
       return;
@@ -54,7 +54,7 @@ var combinationSum2 = function (candidates, target) {
       total -= cur;
       used[i] = false;
     }
-  }
+  };
   backtracking(0);
   return res;
 };

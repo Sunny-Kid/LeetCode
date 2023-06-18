@@ -4,7 +4,7 @@
  * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
  */
 
-var lengthOfLongestSubstring = function (str) {
+var lengthOfLongestSubstring = function(str) {
   // 建立滑动窗口
   if (str.length === 0) return 0;
   const map = {};

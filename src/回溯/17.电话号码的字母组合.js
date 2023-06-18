@@ -24,16 +24,17 @@ digits[i] 是范围 ['2', '9'] 的一个数字。
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function (digits) {
+var letterCombinations = function(digits) {
   const digitsLength = digits.length;
-  const map = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+  const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
   if (!digitsLength) return [];
-  if (digitsLength === 1) return map[digits].split("");
+  if (digitsLength === 1) return map[digits].split('');
 
-  const res = [], path = [];
+  const res = [],
+    path = [];
   function backtracking(startIndex) {
     if (path.length === digitsLength) {
-      res.push(path.join(""));
+      res.push(path.join(''));
       return;
     }
     for (const v of map[digits[startIndex]]) {

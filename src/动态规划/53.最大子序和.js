@@ -16,7 +16,7 @@
  * @return {number}
  */
 // 前缀和
-var maxSubArray = function (nums) {
+var maxSubArray = function(nums) {
   let max = -Number.MAX_VALUE;
   let sum = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -30,7 +30,7 @@ var maxSubArray = function (nums) {
 };
 
 // 动态规划
-var maxSubArray = function (nums) {
+var maxSubArray = function(nums) {
   const length = nums.length;
   let max = nums[0];
   for (let i = 1; i < length; i++) {
@@ -64,6 +64,6 @@ function helper(list, m, n) {
   return Math.max(l, r, lmax + rmax);
 }
 
-var maxSubArray = function (nums) {
+var maxSubArray = function(nums) {
   return helper(nums, 0, nums.length - 1);
 };

@@ -27,7 +27,7 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function (head) {
+var isPalindrome = function(head) {
   const vals = [];
   while (head !== null) {
     vals.push(head.val);

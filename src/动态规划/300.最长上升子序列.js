@@ -13,7 +13,7 @@
 进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?
  */
 
-var lengthOfLIS = function (nums) {
+var lengthOfLIS = function(nums) {
   if (!nums || nums.length === 0) return 0;
   let res = 1;
   const dp = [];

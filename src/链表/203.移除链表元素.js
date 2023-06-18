@@ -38,13 +38,13 @@
  * @param {number} val
  * @return {ListNode}
  */
-var removeElements = function (head, val) {
+var removeElements = function(head, val) {
   if (head === null) return head;
   head.next = removeElements(head.next, val);
   return head.val === val ? head.next : head;
 };
 
-var removeElements = function (head, val) {
+var removeElements = function(head, val) {
   const dummy = new ListNode(0, head);
   let prev = dummy;
   while (prev.next !== null) {

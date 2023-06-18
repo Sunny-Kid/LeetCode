@@ -40,21 +40,21 @@
  * @return {number[]}
  */
 // 递归
-var preorderTraversal = function (root) {
+var preorderTraversal = function(root) {
   if (!root) return [];
   const res = [];
-  const prevOrder = (node) => {
+  const prevOrder = node => {
     if (!node) return;
     res.push(node.val);
     prevOrder(node.left);
     prevOrder(node.right);
-  }
+  };
   prevOrder(root);
   return res;
 };
 
 // 迭代
-var preorderTraversal = function (root) {
+var preorderTraversal = function(root) {
   if (!root) return [];
   const res = [];
   const stack = [];

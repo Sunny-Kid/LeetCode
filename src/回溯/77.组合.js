@@ -29,7 +29,7 @@
  * @param {number} k
  * @return {number[][]}
  */
-var combine = function (n, k) {
+var combine = function(n, k) {
   const path = [];
   const result = [];
 
@@ -49,7 +49,7 @@ var combine = function (n, k) {
 };
 
 // 优化：剪枝
-var combine = function (n, k) {
+var combine = function(n, k) {
   const path = [];
   const result = [];
 

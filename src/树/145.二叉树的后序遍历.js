@@ -38,21 +38,21 @@
  * @return {number[]}
  */
 // 递归
-var postorderTraversal = function (root) {
+var postorderTraversal = function(root) {
   if (!root) return [];
   const res = [];
-  const postOrder = (node) => {
+  const postOrder = node => {
     if (!node) return;
     postOrder(node.left);
     postOrder(node.right);
     res.push(node.val);
-  }
+  };
   postOrder(root);
   return res;
 };
 
 // 迭代
-var postorderTraversal = function (root) {
+var postorderTraversal = function(root) {
   if (!root) return [];
   const res = [];
   const stack = [root];

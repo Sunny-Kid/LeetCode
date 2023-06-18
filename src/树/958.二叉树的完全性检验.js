@@ -40,7 +40,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isCompleteTree = function (root) {
+var isCompleteTree = function(root) {
   const queue = [];
   // 最后一个节点的编号
   let lastNodeNum = 0;

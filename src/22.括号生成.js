@@ -16,7 +16,7 @@
  * @param {number} n
  * @return {string[]}
  */
-var generateParenthesis = function (n) {
+var generateParenthesis = function(n) {
   const res = [];
   const generateOneByOne = (sublist, left, right) => {
     // 右括号可组合的数量已经少于左括号，那么这个时候应该要终止递归回到上一层继续先进行左括号的拼接
@@ -26,7 +26,7 @@ var generateParenthesis = function (n) {
     }
     if (left > 0) generateOneByOne(sublist + '(', left - 1, right);
     if (right > 0) generateOneByOne(sublist + ')', left, right - 1);
-  }
+  };
   generateOneByOne('', n, n);
   return res;
 };

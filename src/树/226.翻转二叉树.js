@@ -30,7 +30,7 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function (root) {
+var invertTree = function(root) {
   if (root === null) return null;
   const left = invertTree(root.left);
   const right = invertTree(root.right);
@@ -39,7 +39,7 @@ var invertTree = function (root) {
   return root;
 };
 
-var invertTree = function (root) {
+var invertTree = function(root) {
   if (root === null) return null;
   const queue = [];
   queue.push(root);

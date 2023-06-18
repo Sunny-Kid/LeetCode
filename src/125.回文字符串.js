@@ -4,8 +4,6 @@
 
 // 给你一个字符串 s，如果它是 回文串 ，返回 true ；否则，返回 false 。
 
- 
-
 // 示例 1：
 // 输入: s = "A man, a plan, a canal: Panama"
 // 输出：true
@@ -33,7 +31,10 @@
 var isPalindrome = function(str) {
   const reg = /[\W_]/g;
   const newStr = str.replace(reg, '').toLowerCase();
-  const reverseStr = newStr.split('').reverse().join('');
+  const reverseStr = newStr
+    .split('')
+    .reverse()
+    .join('');
   return reverseStr === newStr; // 与 newStr 对比
 };
 
@@ -46,7 +47,7 @@ var isPalindrome = function(str) {
     }
   }
   return true;
-}
+};
 
 var isPalindrome = function(str) {
   const reg = /[\W_]/g;
@@ -56,8 +57,8 @@ var isPalindrome = function(str) {
     if (newStr[0] != newStr[len - 1]) {
       return false;
     } else {
-      return isPalindrome(newStr.slice(1, len - 1)); 
+      return isPalindrome(newStr.slice(1, len - 1));
     }
   }
   return true;
-}
+};

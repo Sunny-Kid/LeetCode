@@ -17,7 +17,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maxProduct = function (nums) {
+var maxProduct = function(nums) {
   if (nums == undefined) return 0;
   let res = nums[0];
   let curMin = nums[0];

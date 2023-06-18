@@ -32,7 +32,7 @@ candidates 的所有元素 互不相同
  * @return {number[][]}
  */
 
-var combinationSum = function (candidates, target) {
+var combinationSum = function(candidates, target) {
   const res = [];
   const path = [];
   let total = 0;
