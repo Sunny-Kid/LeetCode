@@ -27,7 +27,7 @@
  * @param {number} k
  * @return {number[]}
  */
-var maxSlidingWindow1 = function(nums, k) {
+var maxSlidingWindow1 = function (nums, k) {
   // bad 时间复杂度O(n * k)
   if (nums.length === 0 || k === 0) return [];
   let sliceWindows = [];
@@ -42,7 +42,7 @@ var maxSlidingWindow1 = function(nums, k) {
   return res;
 };
 
-var maxSlidingWindow2 = function(nums, k) {
+var maxSlidingWindow2 = function (nums, k) {
   // 双端队列优化时间复杂度, 时间复杂度O(n)
   if (nums.length === 0 || k === 0) return [];
   const win = [];

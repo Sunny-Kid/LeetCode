@@ -8,7 +8,7 @@
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var spiralOrder = function(matrix) {
+var spiralOrder = function (matrix) {
   if (!matrix.length || !matrix[0].length) {
     return [];
   }

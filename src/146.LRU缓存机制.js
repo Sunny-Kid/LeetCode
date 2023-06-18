@@ -26,7 +26,7 @@ cache.get(4);       // 返回  4
 /**
  * @param {number} capacity
  */
-var LRUCache = function(capacity) {
+var LRUCache = function (capacity) {
   this.capacity = capacity;
   this.storage = {};
   this.keyOrder = [];
@@ -36,7 +36,7 @@ var LRUCache = function(capacity) {
  * @param {number} key
  * @return {number}
  */
-LRUCache.prototype.get = function(key) {
+LRUCache.prototype.get = function (key) {
   let val = this.storage[key];
   if (val !== undefined && this.keyOrder[0] !== key) {
     const index = this.keyOrder.indexOf(key);
@@ -51,7 +51,7 @@ LRUCache.prototype.get = function(key) {
  * @param {number} value
  * @return {void}
  */
-LRUCache.prototype.put = function(key, value) {
+LRUCache.prototype.put = function (key, value) {
   if (this.storage[key] !== undefined) {
     const index = this.keyOrder.indexOf(key);
     this.keyOrder.splice(index, 1);

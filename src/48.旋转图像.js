@@ -28,7 +28,7 @@ n == matrix.length == matrix[i].length
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
-var rotate = function(matrix) {
+var rotate = function (matrix) {
   const n = matrix.length;
   const matrix_new = new Array(n).fill(0).map(() => new Array(n).fill(0));
   for (let i = 0; i < n; i++) {
@@ -43,7 +43,7 @@ var rotate = function(matrix) {
   }
 };
 
-var rotate = function(matrix) {
+var rotate = function (matrix) {
   const n = matrix.length;
   // 水平翻转
   for (let i = 0; i < Math.floor(n / 2); i++) {
