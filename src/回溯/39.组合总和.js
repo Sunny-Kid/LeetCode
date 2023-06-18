@@ -39,7 +39,7 @@ var combinationSum = function (candidates, target) {
   candidates.sort((a, b) => a - b); // 排序
   function backtracking(startIndex) {
     if (total === target) {
-      res.push(Array.from(path));
+      res.push([...path]);
       return;
     }
     // 横向遍历
