@@ -38,9 +38,7 @@ var minDistance = function(word1, word2) {
 
   const dp = [];
   for (let i = 0; i < m + 1; i++) {
-    dp.push([]);
-  }
-  for (let i = 0; i < m + 1; i++) {
+    dp[i] = dp[i] || [];
     dp[i][0] = i;
   }
   for (let j = 0; j < n + 1; j++) {
