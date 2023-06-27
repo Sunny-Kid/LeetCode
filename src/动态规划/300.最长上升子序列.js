@@ -13,12 +13,13 @@
 进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?
  */
 
-var lengthOfLIS = function(nums) {
+var lengthOfLIS = function (nums) {
   if (!nums || nums.length === 0) return 0;
   let res = 1;
-  const dp = [];
-  for (let i = 0; i < nums.length; i++) dp[i] = 1;
+  const dp = [1];
+
   for (let i = 1; i < nums.length; i++) {
+    dp[i] = dp[i] || 1;
     for (let j = 0; j < i; j++) {
       if (nums[j] < nums[i]) {
         dp[i] = Math.max(dp[i], dp[j] + 1);
