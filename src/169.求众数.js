@@ -4,11 +4,10 @@
 你可以假设数组是非空的，并且给定的数组总是存在众数。
 
 示例 1:
-
 输入: [3,2,3]
 输出: 3
-示例 2:
 
+示例 2:
 输入: [2,2,1,1,1,2,2]
 输出: 2
  */
@@ -18,13 +17,13 @@
  * @return {number}
  */
 // 方法1：使用排序 O(nlogn)
-var majorityElement = function(nums) {
+var majorityElement = function (nums) {
   nums.sort((a, b) => a - b);
   return nums[Math.floor(nums.length / 2)];
 };
 
 // 方法2：摩尔投票法 O(1)
-var majorityElement = function(nums) {
+var majorityElement = function (nums) {
   let res = nums[0];
   let count = 0;
   for (let i = 1; i < nums.length; i++) {
@@ -38,7 +37,7 @@ var majorityElement = function(nums) {
 };
 
 // 方法3：分治 O(nlogn)
-var majorityElement = function(nums) {
+var majorityElement = function (nums) {
   function countInRange(nums, num, low, high) {
     let count = 0;
     for (let i = low; i <= high; i++) {

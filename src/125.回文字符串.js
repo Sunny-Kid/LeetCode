@@ -28,7 +28,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(str) {
+var isPalindrome = function (str) {
   const reg = /[\W_]/g;
   const newStr = str.replace(reg, '').toLowerCase();
   const reverseStr = newStr
@@ -38,7 +38,7 @@ var isPalindrome = function(str) {
   return reverseStr === newStr; // 与 newStr 对比
 };
 
-var isPalindrome = function(str) {
+var isPalindrome = function (str) {
   let reg = /[\W_]/g;
   let newStr = str.replace(reg, '').toLowerCase();
   for (let i = 0, len = Math.floor(newStr.length / 2); i < len; i++) {
@@ -49,7 +49,7 @@ var isPalindrome = function(str) {
   return true;
 };
 
-var isPalindrome = function(str) {
+var isPalindrome = function (str) {
   const reg = /[\W_]/g;
   const newStr = str.replace(reg, '').toLowerCase();
   let len = newStr.length;

@@ -28,7 +28,7 @@
  * @param {number} n
  * @return {string[][]}
  */
-var solveNQueens = function(n) {
+var solveNQueens = function (n) {
   if (n < 1) return [];
   let result = [];
   let cols = new Set();
@@ -37,9 +37,9 @@ var solveNQueens = function(n) {
   // na: 次对角线
   let na = new Set();
   const queens = '.'.repeat(n).split('');
-  DFS(n, 0, []);
+  backtracking(0, []);
 
-  function DFS(n, row, curState) {
+  function backtracking(row, curState) {
     if (row >= n) {
       result.push(curState);
       return;
@@ -51,7 +51,7 @@ var solveNQueens = function(n) {
       pie.add(row + col);
       na.add(row - col);
 
-      DFS(n, row + 1, curState.concat([col]));
+      backtracking(row + 1, [...curState, col]);
 
       cols.delete(col);
       pie.delete(row + col);
