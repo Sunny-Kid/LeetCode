@@ -30,17 +30,17 @@
  */
 var solveNQueens = function (n) {
   if (n < 1) return [];
-  let result = [];
-  let cols = new Set();
+  const result = [];
+  const cols = new Set();
   // pie: 主对角线
-  let pie = new Set();
+  const pie = new Set();
   // na: 次对角线
-  let na = new Set();
+  const na = new Set();
   const queens = '.'.repeat(n).split('');
   backtracking(0, []);
 
   function backtracking(row, curState) {
-    if (row >= n) {
+    if (row === n) {
       result.push(curState);
       return;
     }
