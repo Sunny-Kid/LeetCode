@@ -11,15 +11,15 @@
 输出: 2
 解释: 4 皇后问题存在如下两个不同的解法。
 [
- [".Q..",  // 解法 1
-  "...Q",
-  "Q...",
-  "..Q."],
+ [".Q..",  // 解法 1
+  "...Q",
+  "Q...",
+  "..Q."],
 
- ["..Q.",  // 解法 2
-  "Q...",
-  "...Q",
-  ".Q.."]
+ ["..Q.",  // 解法 2
+  "Q...",
+  "...Q",
+  ".Q.."]
 ]
  */
 
@@ -27,22 +27,23 @@
  * @param {number} n
  * @return {number}
  */
-var totalNQueens = function(n) {
+var totalNQueens = function (n) {
   if (n < 1) return 0;
   let count = 0;
-  DFS(n, 0, 0, 0, 0);
+  DFS(0, 0, 0, 0);
   return count;
 
-  function DFS(n, row, cols, pie, na) {
-    if (row >= n) {
-      count += 1;
+  function DFS(row, cols, pie, na) {
+    if (row === n) {
+      count++;
       return;
     }
     // 得到当前所有空位
     let bits = ~(cols | pie | na) & ((1 << n) - 1);
     while (bits) {
+      // 得到当前行的最低位
       const p = bits & -bits;
-      DFS(n, row + 1, cols | p, (pie | p) << 1, (na | p) >> 1);
+      DFS(row + 1, cols | p, (pie | p) << 1, (na | p) >> 1);
       // 去掉最低位的1
       bits = bits & (bits - 1);
     }

@@ -25,7 +25,7 @@
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function(grid) {
+var numIslands = function (grid) {
   let count = 0;
   const rows = grid.length;
   if (rows === 0) return 0;
@@ -41,7 +41,7 @@ var numIslands = function(grid) {
   return count;
 };
 
-var dfs = function(i, j, rows, cols, grid) {
+var dfs = function (i, j, rows, cols, grid) {
   if (i < 0 || j < 0 || i > rows - 1 || j > cols - 1 || grid[i][j] === '0') return;
   grid[i][j] = '0';
   dfs(i - 1, j, rows, cols, grid);
