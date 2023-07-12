@@ -24,7 +24,7 @@ var subsetsWithDup = function (nums) {
   const path = [];
   nums.sort((a, b) => a - b);
 
-  function backtracing(startIndex) {
+  function backtracking(startIndex) {
     result.push([...path])
     if (startIndex > nums.length - 1) {
       return;
@@ -34,10 +34,10 @@ var subsetsWithDup = function (nums) {
         continue
       }
       path.push(nums[i]);
-      backtracing(i + 1);
+      backtracking(i + 1);
       path.pop();
     }
   }
-  backtracing(0);
+  backtracking(0);
   return result;
 };
