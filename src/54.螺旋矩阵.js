@@ -36,7 +36,10 @@ var spiralOrder = function (matrix) {
         result.push(matrix[row][left]);
       }
     }
-    [left, top, right, bottom] = [left + 1, top + 1, right - 1, bottom - 1];
+    left++;
+    top++;
+    bottom--;
+    right--;
   }
 
   return result;
