@@ -34,7 +34,7 @@
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-var mergeTrees = function(t1, t2) {
+var mergeTrees = function (t1, t2) {
   if (t1 === null) return t2;
   if (t2 === null) return t1;
   let res = new TreeNode(t1.val + t2.val);

@@ -31,7 +31,7 @@
  */
 var diameterOfBinaryTree = function (root) {
   let answer = 1;
-  const dfs = (node) => {
+  const dfs = node => {
     if (node === null) return 0;
     // 左儿子为根的子树的深度
     const left = dfs(node.left);
