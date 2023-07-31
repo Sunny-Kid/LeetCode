@@ -26,7 +26,7 @@ s 仅由数字和英文字母组成
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function(s) {
+var longestPalindrome = function (s) {
   let maxLen = 1; // 最长长度
   let longestBegin = 0; // 当最长长度更新时同时缓存起始点
   const stringLength = s.length;
@@ -61,36 +61,4 @@ var longestPalindrome = function(s) {
     }
   }
   return s.slice(longestBegin, longestBegin + maxLen);
-};
-
-var longestPalindrome = function(s) {
-  let maxLength = 1;
-  let longestBegin = 0;
-  let dp = [];
-  const stringLength = s.length;
-
-  for (let i = 0; i < stringLength; i++) {
-    if (dp[i] === undefined) {
-      dp[i] = [];
-    }
-    dp[i][i] = true;
-    if (s[i] === s[i + 1]) {
-      dp[i][i + 1] = true;
-      longestBegin = i;
-      maxLength = 2;
-    }
-  }
-
-  for (let L = 3; L <= stringLength; L++) {
-    for (let i = 0; i + L - 1 < stringLength; i++) {
-      const j = i + L - 1;
-      if (s[i] === s[j] && dp[i + 1][j - 1]) {
-        dp[i][j] = true;
-        longestBegin = i;
-        maxLength = L;
-      }
-    }
-  }
-
-  return s.slice(longestBegin, longestBegin + maxLength);
 };

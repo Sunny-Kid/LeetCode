@@ -27,7 +27,7 @@
  * @param {number} n
  * @return {number}
  */
-var climbStairs = function(n) {
+var climbStairs = function (n) {
   // O(n)
   const res = [0, 1, 2];
   for (let i = 3; i <= n; i++) {
@@ -36,7 +36,7 @@ var climbStairs = function(n) {
   return res[n];
 };
 
-var climbStairs = function(n) {
+var climbStairs = function (n) {
   // O(2^n) 不推荐
   if (n === 0 || n === 1 || n === 2) return n;
   return climbStairs(n - 1) + climbStairs(n - 2);

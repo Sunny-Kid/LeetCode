@@ -11,11 +11,11 @@
  * @param {number} n
  * @return {number}
  */
-var uniquePaths = function(m, n) {
+var uniquePaths = function (m, n) {
   if (m <= 0 || n <= 0) {
     return 0;
   }
-  let dp = [];
+  const dp = [];
   for (let i = 0; i < m; i++) {
     // 相当于最左面一列，机器人只能一直往下走
     dp[i] = [1];

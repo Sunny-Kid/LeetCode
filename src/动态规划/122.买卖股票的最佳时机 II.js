@@ -31,7 +31,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
   const n = prices.length;
   const dp = new Array(n).fill(0).map(v => new Array(2).fill(0));
   (dp[0][0] = 0), (dp[0][1] = -prices[0]);

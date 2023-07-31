@@ -11,13 +11,13 @@ dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1] + arr[i][j]);
  * @param {number[][]} grid
  * @return {number}
  */
-var minPathSum = function(grid) {
+var minPathSum = function (grid) {
   const m = grid.length;
   const n = grid[0].length;
   if (m <= 0 || n <= 0) {
     return 0;
   }
-  let dp = [[]];
+  const dp = [[]];
   dp[0][0] = grid[0][0];
   for (let i = 1; i < m; i++) {
     dp[i] = dp[i] ?? [];

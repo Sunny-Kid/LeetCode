@@ -22,8 +22,8 @@
  * @return {number}
  * 当天的最大收益 = max(当天卖出：当天价格 - 过去几天最小价格，当天不卖：过去几天的最大收益)
  */
-var maxProfit = function(prices) {
-  let n = prices.length;
+var maxProfit = function (prices) {
+  const n = prices.length;
   if (!n || n === 1) return 0;
 
   // 最大收益
