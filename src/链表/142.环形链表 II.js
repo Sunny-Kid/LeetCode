@@ -14,7 +14,7 @@
 解释：链表中有一个环，其尾部连接到第二个节点。
  */
 
-var detectCycle = function(head) {
+var detectCycle = function (head) {
   let slow = head;
   let fast = head;
   while (true) {
