@@ -24,7 +24,7 @@ digits[i] 是范围 ['2', '9'] 的一个数字。
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function(digits) {
+var letterCombinations = function (digits) {
   const digitsLength = digits.length;
   const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
   if (!digitsLength) return [];

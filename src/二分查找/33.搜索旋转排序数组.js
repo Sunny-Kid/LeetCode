@@ -23,7 +23,7 @@
  * @param {number} target
  * @return {number}
  */
-var search = function(nums, target) {
+var search = function (nums, target) {
   const numsLength = nums.length;
   if (numsLength === 0) {
     return -1;

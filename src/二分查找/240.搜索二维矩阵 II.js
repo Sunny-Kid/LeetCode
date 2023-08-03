@@ -27,7 +27,7 @@ n == matrix[i].length
  * @param {number} target
  * @return {boolean}
  */
-var searchMatrix = function(matrix, target) {
+var searchMatrix = function (matrix, target) {
   const search = (nums, target) => {
     let left = 0;
     let right = nums.length - 1;

@@ -21,7 +21,7 @@
  * @param {number} x
  * @return {number}
  */
-var mySqrt = function(x) {
+var mySqrt = function (x) {
   if (x === 0 || x === 1) return x;
   let left = 0;
   let right = x;
@@ -40,7 +40,7 @@ var mySqrt = function(x) {
   return res;
 };
 
-var mySqrt = function(x) {
+var mySqrt = function (x) {
   if (x === 0 || x === 1) return x;
   let r = x;
   while (r * r > x) {
