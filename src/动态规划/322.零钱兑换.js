@@ -19,9 +19,9 @@
  * @param {number} amount
  * @return {number}
  */
-var coinChange = function(coins, amount) {
+var coinChange = function (coins, amount) {
   // amount为0时返回结果：最少硬币个数为0
-  let dp = [0];
+  const dp = [0];
   for (let i = 1; i <= amount; i++) {
     dp[i] = amount + 1;
     for (let j = 0; j < coins.length; j++) {
