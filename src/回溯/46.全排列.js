@@ -24,7 +24,7 @@ nums 中的所有整数 互不相同
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
+var permute = function (nums) {
   const res = [];
   const path = [];
 
