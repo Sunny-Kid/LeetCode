@@ -27,7 +27,7 @@
  * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
   const dummy = new ListNode(0, head);
   let first = head;
   let length = 0;
@@ -45,7 +45,7 @@ var removeNthFromEnd = function(head, n) {
   return dummy.next;
 };
 
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
   const dummy = new ListNode(0, head);
   let first = head;
   let second = dummy;
@@ -60,7 +60,7 @@ var removeNthFromEnd = function(head, n) {
   return dummy.next;
 };
 
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
   const dummy = new ListNode(0, head);
   const stack = [];
   let cur = dummy;
