@@ -35,7 +35,7 @@ ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next 
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
+var middleNode = function (head) {
   let length = 0;
   let curr = head;
   while (curr) {
@@ -51,7 +51,7 @@ var middleNode = function(head) {
   return curr;
 };
 
-var middleNode = function(head) {
+var middleNode = function (head) {
   let slow = head;
   let fast = head;
   while (fast !== null && fast.next !== null) {
