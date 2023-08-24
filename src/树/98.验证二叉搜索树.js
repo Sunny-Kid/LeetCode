@@ -38,7 +38,7 @@
  * @return {boolean}
  */
 // 使用递归
-var isValidBST = function(root, min, max) {
+var isValidBST = function (root, min, max) {
   const helper = (root, lower, upper) => {
     if (root === null) return true;
     if (root.val <= lower || root.val >= upper) return false;
@@ -48,7 +48,7 @@ var isValidBST = function(root, min, max) {
 };
 
 // 使用中序遍历
-var isValidBST = function(root) {
+var isValidBST = function (root) {
   let stack = [];
   let inorder = -Infinity;
 
