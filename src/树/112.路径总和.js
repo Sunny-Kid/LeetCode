@@ -66,7 +66,7 @@ var hasPathSum2 = function (root, sum) {
 
 var pathSum = function (root, sum) {
   if (!root) return [];
-  let res = [];
+  const res = [];
   function dfs(result, ressum, node) {
     if (!node.left && !node.right && ressum + node.val === sum) {
       res.push([...result, node.val]);
