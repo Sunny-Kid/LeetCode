@@ -3,7 +3,7 @@
  * 该元素比放在它左边所有的元素都要大；
  * 该元素比放在它右边所有的元素都要小；
  */
-const find_number = (arr) => {
+const find_number = arr => {
   if (arr.length < 3) return [];
   const res = [];
   const right_min = new Array(arr.length);
@@ -15,7 +15,7 @@ const find_number = (arr) => {
       min = arr[i];
     }
     right_min[i - 1] = min;
-  };
+  }
   console.log(right_min);
   let max = arr[0];
   for (let i = 1; i < arr.length - 1; i++) {

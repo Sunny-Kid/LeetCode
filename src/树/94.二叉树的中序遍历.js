@@ -39,22 +39,22 @@
  * @return {number[]}
  */
 // 递归
-var inorderTraversal = function (root) {
+var inorderTraversal = function(root) {
   const res = [];
-  const inorder = (root) => {
+  const inorder = root => {
     if (!root) {
       return;
     }
     inorder(root.left);
     res.push(root.val);
     inorder(root.right);
-  }
+  };
   inorder(root);
   return res;
 };
 
 // 迭代 - 类似二叉树的前序遍历
-var inorderTraversal = function (root) {
+var inorderTraversal = function(root) {
   const res = [];
   const stack = [];
   let node = root;

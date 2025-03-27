@@ -30,7 +30,7 @@ candidates 中的每个数字在每个组合中只能使用一次。
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function (candidates, target) {
+var combinationSum2 = function(candidates, target) {
   const res = [];
   const path = [];
   let total = 0;

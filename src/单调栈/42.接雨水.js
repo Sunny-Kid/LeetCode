@@ -21,7 +21,7 @@ n == height.length
  * @return {number}
  */
 
-var trap = function (height) {
+var trap = function(height) {
   const n = height.length;
   if (n === 0) {
     return 0;
