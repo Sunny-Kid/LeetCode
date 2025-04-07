@@ -32,7 +32,7 @@ exection -> execution (插入 'u')
  * @param {string} word2
  * @return {number}
  */
-var minDistance = function (word1, word2) {
+var minDistance = function(word1, word2) {
   const m = word1.length;
   const n = word2.length;
 
