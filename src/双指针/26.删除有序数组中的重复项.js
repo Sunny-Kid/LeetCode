@@ -37,7 +37,7 @@ nums 已按 升序 排列
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
+var removeDuplicates = function(nums) {
   const n = nums.length;
   if (n === 0) {
     return 0;

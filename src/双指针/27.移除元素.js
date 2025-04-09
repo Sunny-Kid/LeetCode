@@ -37,7 +37,7 @@ for (int i = 0; i < len; i++) {
  * @param {number} val
  * @return {number}
  */
-var removeElement = function (nums, val) {
+var removeElement = function(nums, val) {
   const n = nums.length;
   let left = 0;
   for (let right = 0; right < n; right++) {
