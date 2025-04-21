@@ -12,6 +12,7 @@ var lengthOfLongestSubstring = function(str) {
   let left = 0;
   for (let i = 0; i < str.length; i++) {
     if (map[str[i]] !== undefined) {
+      // 存在重复字符，左指针右移，确保指针向右移，用 Math.max
       left = Math.max(left, map[str[i]] + 1);
     }
     map[str[i]] = i;

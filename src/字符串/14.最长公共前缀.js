@@ -21,7 +21,7 @@ strs[i] 仅由小写英文字母组成
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function (strs) {
+var longestCommonPrefix = function(strs) {
   if (strs.length === 0) return '';
   let ans = strs[0];
   for (let i = 1; i < strs.length; i++) {
